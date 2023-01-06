@@ -23,6 +23,9 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlAction" destination="BYZ-38-t0r" eventType="valueChanged" id="eRz-rP-KTP"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7w8-Lo-dB8">
                                 <rect key="frame" x="176" y="150" width="41.333333333333343" height="20.333333333333343"/>
@@ -32,6 +35,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nrz-8B-uDG">
                                 <rect key="frame" x="14" y="190.33333333333334" width="365" height="31"/>
+                                <connections>
+                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="9QO-16-eiP"/>
+                                </connections>
                             </slider>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScT-NU-azG">
                                 <rect key="frame" x="16" y="240.33333333333337" width="361" height="34"/>
@@ -49,9 +55,15 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="ynR-ne-YTy"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MRt-M4-I6a">
                                 <rect key="frame" x="16" y="364.33333333333331" width="361" height="34.333333333333314"/>
+                                <connections>
+                                    <action selector="datePickerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="oDR-Jh-rQ2"/>
+                                </connections>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ciu-M6-Ywh">
                                 <rect key="frame" x="15.999999999999993" y="418.66666666666669" width="110.33333333333331" height="31"/>
@@ -64,6 +76,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ofG-Dk-BcB">
                                         <rect key="frame" x="61.333333333333329" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchAction" destination="BYZ-38-t0r" eventType="valueChanged" id="pb9-EE-YgF"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -87,14 +102,25 @@
                             <constraint firstItem="ScT-NU-azG" firstAttribute="top" secondItem="Nrz-8B-uDG" secondAttribute="bottom" constant="20" id="jc0-8n-lrf"/>
                             <constraint firstItem="lLh-0z-0H0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nb6-kP-UHk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lLh-0z-0H0" secondAttribute="trailing" constant="16" id="nbu-ds-HyA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7w8-Lo-dB8" secondAttribute="trailing" constant="16" id="oHP-g7-3U8"/>
                             <constraint firstItem="Nrz-8B-uDG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qzO-PV-r6E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nrz-8B-uDG" secondAttribute="trailing" constant="16" id="vFC-kI-Sw0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ScT-NU-azG" secondAttribute="trailing" constant="16" id="vLB-VT-wVB"/>
+                            <constraint firstItem="7w8-Lo-dB8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wEr-km-yxi"/>
                             <constraint firstItem="1jM-Dx-lwH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xnT-wF-zwH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1jM-Dx-lwH" secondAttribute="trailing" constant="16" id="z2w-mq-ZWA"/>
                             <constraint firstAttribute="trailing" secondItem="MRt-M4-I6a" secondAttribute="trailing" constant="16" id="z4i-US-MLC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="1jM-Dx-lwH" id="Fl1-Lg-fPf"/>
+                        <outlet property="datePicker" destination="MRt-M4-I6a" id="KI8-Sp-j8c"/>
+                        <outlet property="mainLabel" destination="7w8-Lo-dB8" id="5LG-zf-Lir"/>
+                        <outlet property="segmentedControl" destination="lLh-0z-0H0" id="Gnh-9D-aBN"/>
+                        <outlet property="slider" destination="Nrz-8B-uDG" id="NBf-03-V6Y"/>
+                        <outlet property="switcher" destination="ofG-Dk-BcB" id="TB3-kj-oQ5"/>
+                        <outlet property="textField" destination="ScT-NU-azG" id="WQ6-KW-c4T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
