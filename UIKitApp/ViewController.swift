@@ -65,6 +65,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonAction() {
+        if textField.text!.isEmpty {
+            showAlert(title: "Textfield is null", message: "Please fillout textfield")
+            return
+        }
         mainLabel.text = textField.text
     }
     
@@ -86,3 +90,23 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController {
+    func showAlert(title: String, message: String) {
+        let alertWindow = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let buttonOK = UIAlertAction(title: "OK", style: .default)
+        alertWindow.addAction(buttonOK)
+        present(alertWindow, animated: true)
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        buttonAction()
+        return true
+    }
+}
